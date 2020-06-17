@@ -1,0 +1,47 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+                <div class="card-header">
+                  <strong>Basic Form</strong>
+                  Elements
+                </div>
+                <div class="card-body">
+                  <form action="{$baseUrl}/belajar/saveformregister" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Nama</label>
+                      <div class="col-md-9">
+                        <input type="text" id="text-nama" name="textnama" class="form-control" placeholder="Nama" value="{$datanya.textnama}">
+                        <span class="help-block">This is a help text</span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="text-input">Address</label>
+                      <div class="col-md-9">
+                        <input type="text" id="text-addr" name="textaddr" class="form-control" placeholder="Address" value="{$datanya.textaddr}">
+                        <span class="help-block">This is a help text</span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="email-input">Email Input</label>
+                      <div class="col-md-9">
+                        <input type="email" id="text-email" name="textemail" class="form-control" placeholder="Enter Email" value="{$datanya.textemail}">
+                        <span class="help-block">Please enter your email</span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="email-input">Phone</label>
+                        <div class="col-md-9">
+                          <input type="text" id="text-phone" name="textphone" class="form-control" placeholder="Enter Phone" value="{$datanya.textphone}">
+                          <span class="help-block">Please enter your phone</span>
+                        </div>
+                      </div>                  
+                    <div class="card-footer">
+                        <input type="text" name="id" value="{$datanya.id}">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                      </div>
+                  </form>
+                </div>
+                
+              </div>
+{/block}              

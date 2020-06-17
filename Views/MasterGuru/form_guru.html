@@ -1,0 +1,158 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Guru</strong>
+  </div>
+  <div class="card-body">
+    <form action="{$baseUrl}/masterguru/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Guru</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Guru" value="{$datanya.id}" readonly required> 
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">NUPTK</label>
+        <div class="col-md-9">
+          <input type="number" id="nip" name="nip" class="form-control" placeholder="NUPTK" value="{$datanya.nip}" required min="0" max="9999999999999999">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Nama Guru</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_guru" name="nama_guru" class="form-control" placeholder="Nama Guru" value="{$datanya.nama_guru}" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Jabatan</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_jabatan" id="id_jabatan" required>
+              {foreach from=$listdatajabatan item=itemdatajabatan}	
+              <option value={$itemdatajabatan.id}>{$itemdatajabatan.nama_jabatan}</option>
+              {/foreach}
+            </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Jurusan</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_jurusan" id="id_jurusan" required>
+              {foreach from=$listdatajurusan item=itemdatajurusan}	
+              <option value={$itemdatajurusan.id}>{$itemdatajurusan.nama_jurusan}</option>
+              {/foreach}
+            </select>
+        </div>
+      </div> 
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mengajar</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_matpel" id="id_matpel" required>
+              {foreach from=$listdatamatpel item=itemdatamatpel}	
+              <option value={$itemdatamatpel.id}>{$itemdatamatpel.nama_matpel}</option>
+              {/foreach}
+            </select>
+        </div>
+      </div>   
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Pendidikan Terakhir</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_pendidikan" id="id_pendidikan" required>
+              {foreach from=$listdatapend item=itemdatapendidikan}	
+              <option value={$itemdatapendidikan.id}>{$itemdatapendidikan.deskripsi}</option>
+              {/foreach}
+            </select>
+        </div>
+      </div>   
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Sertifikasi</label>
+        <div class="col-md-9">
+          <div class="checkbox">
+            <label for="sertified">
+              <input type="checkbox" id="sertified" name="sertified" value="{$datanya.sertified}" onchange="setCBSertified()">
+            </label>
+          </div>
+        </div>
+      </div>  
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Status Pedagogik</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="status_pedagogik" id="status_pedagogik" required>
+              <option value="sangat kurang">Sangat Kurang</option>
+              <option value="kurang">Kurang</option>
+              <option value="cukup">Cukup</option>
+              <option value="baik">Baik</option>
+              <option value="sangat baik">Sangat Baik</option>
+            </select>
+        </div>
+      </div>    
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Status Profesional</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="status_profesional" id="status_profesional" required>
+              <option value="sangat kurang">Sangat Kurang</option>
+              <option value="kurang">Kurang</option>
+              <option value="cukup">Cukup</option>
+              <option value="baik">Baik</option>
+              <option value="sangat baik">Sangat Baik</option>
+            </select>
+        </div>
+      </div>   
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Tahun Lahir</label>
+        <div class="col-md-9">
+          <input type="number" id="tahun_lahir" name="tahun_lahir" class="form-control" placeholder="Tahun Lahir" value="{$datanya.tahun_lahir}" required max="9999">
+        </div>
+      </div>
+      <div class="card-footer">
+          <input type="hidden" id="id_jabatan_update" name="id_jabatan_update" value="{$datanya.id_jabatan}">
+          <input type="hidden" id="id_jurusan_update" name="id_jurusan_update" value="{$datanya.id_jurusan}">
+          <input type="hidden" id="id_matpel_update" name="id_matpel_update" value="{$datanya.id_matpel}">
+          <input type="hidden" id="id_pendidikan_update" name="id_pendidikan_update" value="{$datanya.id_pendidikan}">
+          <input type="hidden" id="status_pedagogik_update" name="status_pedagogik_update" value="{$datanya.status_pedagogik}">
+          <input type="hidden" id="status_profesional_update" name="status_profesional_update" value="{$datanya.status_profesional}">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+{/block}          
+{block name=scriptcontent}
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<script src="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/select2/select2.min.css"/>
+<script src="{$baseUrl}/assets/vendor/select2/select2.min.js"></script>
+
+<script type="text/javascript">	
+document.getElementById("id_jabatan").value = document.getElementById("id_jabatan_update").value;
+document.getElementById("id_pendidikan").value = document.getElementById("id_pendidikan_update").value;
+document.getElementById("id_matpel").value = document.getElementById("id_matpel_update").value;
+document.getElementById("id_jurusan").value = document.getElementById("id_jurusan_update").value;
+document.getElementById("status_pedagogik").value = document.getElementById("status_pedagogik_update").value;
+document.getElementById("status_profesional").value = document.getElementById("status_profesional_update").value;
+ 
+$(document).ready(function()
+{         	
+    $('#id_jabatan').select2();
+    $('#id_jurusan').select2();
+    $('#id_matpel').select2();
+    $('#id_pendidikan').select2();
+    document.getElementById("nip").value == 0;
+    document.getElementById("tahun_lahir").value == 0;
+    document.getElementById("sertified").value == 0;
+});
+
+if(document.getElementById("sertified").value == 1) {
+  document.getElementById("sertified").checked = true;
+} 
+
+function setCBSertified() {
+  if (document.getElementById("sertified").checked) {
+    document.getElementById("sertified").value = 1;
+  } else {
+    document.getElementById("sertified").value = 0;
+  }
+}
+</script>
+{/block}    

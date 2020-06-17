@@ -1,0 +1,40 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Siswa</strong>
+  </div>
+  <div class="card-body">
+    <form action="{$baseUrl}/mastersiswa/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Siswa</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Siswa" value="{$datanya.id}" readonly required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Nomor Induk Siswa</label>
+        <div class="col-md-9">
+          <input type="number" id="nis" name="nis" class="form-control" placeholder="NIS" value="{$datanya.nis}" required max="99999999">
+        </div>
+      </div>    
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Nama Siswa</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_siswa" name="nama_siswa" class="form-control" placeholder="Nama Siswa" value="{$datanya.nama_siswa}" required>
+        </div>
+      </div>  
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Kelas</label>
+        <div class="col-md-9">
+          <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{$datanya.kelas}" required maxlength="5">
+        </div>
+      </div>            
+      <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+{/block}              

@@ -1,0 +1,42 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Simple Table
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Alamat</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+        {foreach from=$listdata item=itemdata}	
+          <tr>
+            <td><a href='{$baseUrl}/belajar/formregister/{$itemdata.id}'>{$itemdata.textnama}</a></td>
+            <td>{$itemdata.textaddr}</td>
+            <td>{$itemdata.textemail}</td>
+            <td>
+              <span class="badge badge-success">{$itemdata.textphone}</span>
+            </td>
+          </tr>
+        {/foreach}
+        </tbody>
+      </table>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+{/block}

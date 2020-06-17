@@ -1,0 +1,108 @@
+<?php
+/* Smarty version 3.1.32, created on 2019-12-03 22:51:15
+  from 'E:\Yoyoy\bantingan\bantingan\Views\Masterpendidikanguru\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5de684730c8976_96490885',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd5049f8139a040ab60ed4ecc4e87eedff9fe254f' => 
+    array (
+      0 => 'E:\\Yoyoy\\bantingan\\bantingan\\Views\\Masterpendidikanguru\\index.html',
+      1 => 1575388156,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5de684730c8976_96490885 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139785de684730a7310_94685984', 'bodycontent');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "../Shared/core2.master.html");
+}
+/* {block 'bodycontent'} */
+class Block_139785de684730a7310_94685984 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'bodycontent' => 
+  array (
+    0 => 'Block_139785de684730a7310_94685984',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Master Pedidikan
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Kode</th>
+            <th>Deskripsi</th>
+            <th>Edit/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdata']->value, 'itemdata');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdata']->value) {
+?>	
+          <tr>
+            <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['id'];?>
+</a></td>
+            <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['kode'];?>
+</td>
+            <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['deskripsi'];?>
+</td>
+            <td>
+                <a href="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterpendidikanguru/form_pendidikan/<?php echo $_smarty_tpl->tpl_vars['itemdata']->value['id'];?>
+" class="fa fa-pencil"></a>
+                <a href="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterpendidikanguru/delete/<?php echo $_smarty_tpl->tpl_vars['itemdata']->value['id'];?>
+" class="fa fa-times"></a>
+            </td>
+          </tr>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        </tbody>
+      </table>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+    <div class="card-footer">
+        <a href="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterpendidikanguru/form_pendidikan">
+          <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Add New Pendidikan</button> 
+        </a>
+      </div>
+  </div>
+<?php
+}
+}
+/* {/block 'bodycontent'} */
+}

@@ -1,0 +1,34 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Ruangan</strong>
+  </div>
+  <div class="card-body">
+    <form action="{$baseUrl}/masterruangan/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Ruangan</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Ruangan" value="{$datanya.id}" readonly required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Nama Ruangan</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_ruangan" name="nama_ruangan" class="form-control" placeholder="Nama Ruangan" value="{$datanya.nama_ruangan}" required>
+        </div>
+      </div>  
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Luas Ruangan</label>
+        <div class="col-md-9">
+          <input type="number" id="luas" name="luas" class="form-control" placeholder="Luas Ruangan" value="{$datanya.luas}" required>
+        </div>
+      </div>             
+      <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+{/block}              

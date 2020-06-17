@@ -1,0 +1,52 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Master Default Parameter
+      {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+      	<span class="pull-right"><a class="btn btn-primary btn-xs" href="{$baseUrl}/masterdefault/form_default">New Parameter</a></span>
+      {/if}
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm" id="table-user">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Kode</th>
+            <th>Deskripsi</th>
+            <th>Value</th>
+            {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+            <th>Edit/Delete</th>
+            {/if}
+          </tr>
+        </thead>
+        <tbody>
+        {foreach from=$listdata item=itemdata}	
+          <tr>
+            <td>{$itemdata.id}</td>
+            <td>{$itemdata.kode}</td>
+            <td>{$itemdata.deskripsi}</td>
+            <td>{$itemdata.value}</td>
+            {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+            <td>
+                <a href="{$baseUrl}/masterdefault/form_default/{$itemdata.id}" class="fa fa-pencil"></a>
+                <a href="{$baseUrl}/masterdefault/delete/{$itemdata.id}" class="fa fa-times" onclick="return confirm('Are you sure you want to delete this data?')"></a>
+            </td>
+            {/if}
+          </tr>
+          {/foreach}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{/block}
+{block name=scriptcontent}
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<script src="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript">	
+$(document).ready(function()
+{         	
+    var table = $('#table-user').DataTable();
+});
+</script>
+{/block}

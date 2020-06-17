@@ -1,0 +1,60 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Master Guru
+    {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+    	<span class="pull-right"><a class="btn btn-primary btn-xs" href="{$baseUrl}/masterguru/form_guru">New Guru</a></span>
+    {/if}
+  </div>
+  <div class="card-body">
+    <table class="table table-responsive-sm" id="table-user">
+      <thead>
+        <tr>
+          <th>NUPTK</th>
+          <th>Nama Guru</th>
+          <th>Jabatan</th>
+          <th>Mengajar</th>
+          <th>Pendidikan Terakhir</th>
+          <th>Status Pedagogik</th>
+          <th>Status Profesional</th>
+          <th>Tahun Lahir</th>
+          {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+          	<th>Edit/Delete</th>
+          {/if}
+        </tr>
+      </thead>
+      <tbody>
+      {foreach from=$listdata item=itemdata}	
+        <tr>
+          <td>{$itemdata.nip}</td>
+          <td>{$itemdata.nama_guru}</td>
+          <td>{$itemdata.nama_jabatan}</td>
+          <td>{$itemdata.nama_matpel}</td>
+          <td>{$itemdata.deskripsi}</td>
+          <td>{$itemdata.status_pedagogik}</td>
+          <td>{$itemdata.status_profesional}</td>
+          <td>{$itemdata.tahun_lahir}</td>
+          {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+	          <td>
+	              <a href="{$baseUrl}/masterguru/form_guru/{$itemdata.id}" class="fa fa-pencil"></a>
+	              <a href="{$baseUrl}/masterguru/delete/{$itemdata.id}" class="fa fa-times" onclick="return confirm('Are you sure you want to delete this data?')"></a>
+	          </td>
+          {/if}
+        </tr>
+      {/foreach}
+      </tbody>
+    </table>
+  </div>
+</div>
+{/block}
+{block name=scriptcontent}
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<script src="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript">	
+$(document).ready(function()
+{         	
+    var table = $('#table-user').DataTable();
+});
+</script>
+{/block}

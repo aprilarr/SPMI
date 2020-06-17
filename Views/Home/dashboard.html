@@ -1,0 +1,136 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}  
+  <div class="container-fluid">
+    <div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="card text-white bg-primary">
+            <div class="card-body pb-0">
+              <h4 class="mb-0">Standar Pendidik & Tenaga Kependidikan</h4>
+              <br></br>
+              <div class="card">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-0"></canvas>
+                  </div>
+                </div>
+              </div>
+              <table class="table table-responsive-sm" id="table-tendik0">
+                <tr>
+                  <th>No. Indikator</th>
+                  <th>Nama Indikator</th>
+                  <th>Kondisi Saat Ini</th>
+                  <th>Kondisi Ideal</th>
+                  <th>Masalah</th>
+                  <th>Akar Masalah</th>
+                  <th>Rekomendasi</th>
+                </tr>
+              </table>
+              <br></br>
+              <div class="card">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-pendidikan"></canvas>
+                  </div>
+                </div>
+              </div>
+              <br></br>
+              <div class="card">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-sertifikasi"></canvas>
+                  </div>
+                </div>
+              </div>
+              <br></br>
+              <div class="card">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-pedagogik"></canvas>
+                  </div>
+                </div>
+              </div>
+              <br></br>
+              <div class="card">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-profesional"></canvas>
+                  </div>
+                </div>
+              </div>
+              <br></br>
+			  <table class="table table-responsive-sm" id="table-tendik">
+			    <tr>
+			      <th>No. Indikator</th>
+			      <th>Nama Indikator</th>
+			      <th>Sesuai</th>
+			      <th>Tidak Sesuai</th>
+			    </tr>
+			  </table>
+              <br></br>
+              <div class="card">
+                <div class="card-body">
+                  <div class="chart-wrapper">
+                    <canvas id="canvas-1"></canvas>
+                  </div>
+                </div>
+              </div>
+              <table class="table table-responsive-sm" id="table-tendik1">
+                <tr>
+                  <th>No. Indikator</th>
+                  <th>Nama Indikator</th>
+                  <th>Kondisi Saat Ini</th>
+                  <th>Kondisi Ideal</th>
+                  <th>Masalah</th>
+                  <th>Akar Masalah</th>
+                  <th>Rekomendasi</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card text-white bg-success">
+          <div class="card-body pb-0">
+            <h4 class="mb-0">Standar Sarana & Prasarana</h4>
+			<br></br>
+            <table class="table table-responsive-sm" id="table-sapras">
+              <tr>
+                  <th>No. Indikator</th>
+                  <th>Nama Indikator</th>
+                  <th>Sesuai</th>
+                  <th>Tidak Sesuai</th>
+                </tr>
+            </table>
+            <br></br>
+            <div class="card">
+              <div class="card-body">
+                <div class="chart-wrapper">
+                  <canvas id="canvas-2"></canvas>
+                </div>
+              </div>
+            </div>
+            <table class="table table-responsive-sm" id="table-sapras-det">
+              <tr>
+                  <th>No. Indikator</th>
+                  <th>Nama Indikator</th>
+                  <th>Kondisi Saat Ini</th>
+                  <th>Kondisi Ideal</th>
+                  <th>Masalah</th>
+                  <th>Akar Masalah</th>
+                  <th>Rekomendasi</th>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div> 
+  </div>
+{/block}

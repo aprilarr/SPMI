@@ -1,0 +1,98 @@
+<?php
+/* Smarty version 3.1.32, created on 2019-12-02 17:19:51
+  from 'E:\Yoyoy\bantingan\bantingan\Views\Masterjabatan\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5de4e5473ee9c3_87630276',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7ea7899c7fe82c3362f9cd36938cc2ad04f0a9ef' => 
+    array (
+      0 => 'E:\\Yoyoy\\bantingan\\bantingan\\Views\\Masterjabatan\\index.html',
+      1 => 1575281944,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5de4e5473ee9c3_87630276 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9175de4e5473cc4c1_13370132', 'bodycontent');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "../Shared/core2.master.html");
+}
+/* {block 'bodycontent'} */
+class Block_9175de4e5473cc4c1_13370132 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'bodycontent' => 
+  array (
+    0 => 'Block_9175de4e5473cc4c1_13370132',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Master Jabatan
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Jabatan</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdata']->value, 'itemdata');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdata']->value) {
+?>	
+          <tr>
+            <td><a href='<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterjabatan/form_jabatan/<?php echo $_smarty_tpl->tpl_vars['itemdata']->value['id'];?>
+'><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['id'];?>
+</a></td>
+            <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['nama_jabatan'];?>
+</td>
+          </tr>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        </tbody>
+      </table>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+    <div class="card-footer">
+        <a href="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterjabatan/form_jabatan">
+          <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Add New Jabatan</button> 
+        </a>
+      </div>
+  </div>
+<?php
+}
+}
+/* {/block 'bodycontent'} */
+}

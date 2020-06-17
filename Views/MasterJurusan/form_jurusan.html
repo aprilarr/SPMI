@@ -1,0 +1,28 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Jurusan</strong>
+  </div>
+  <div class="card-body">
+    <form action="{$baseUrl}/masterjurusan/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Jabatan</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Jurusan" value="{$datanya.id}" readonly required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Nama Jurusan</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_jurusan" name="nama_jurusan" class="form-control" placeholder="Nama Jurusan" value="{$datanya.nama_jurusan}" required>
+        </div>
+      </div>              
+      <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+{/block}              

@@ -1,0 +1,157 @@
+<?php
+/* Smarty version 3.1.32, created on 2019-11-24 21:16:26
+  from 'E:\Yoyoy\bantingan\bantingan\Views\Standarkompetensilulusan\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5dda90bad31b10_49380707',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '45939c04bab64bc5c3c30a97cc4faa311de4a4d4' => 
+    array (
+      0 => 'E:\\Yoyoy\\bantingan\\bantingan\\Views\\Standarkompetensilulusan\\index.html',
+      1 => 1574604984,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5dda90bad31b10_49380707 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_32405dda90bad2ef13_24312104', 'bodycontent');
+?>
+
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../Shared/core2.master.html");
+}
+/* {block 'bodycontent'} */
+class Block_32405dda90bad2ef13_24312104 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'bodycontent' => 
+  array (
+    0 => 'Block_32405dda90bad2ef13_24312104',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+  
+<!--/.col-->
+<div class="mb-4">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home3" role="tab" aria-controls="home"><i class="icon-calculator"></i> Pemetaan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile"><i class="icon-basket-loaded"></i> Rencana Pemenuhan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#messages3" role="tab" aria-controls="messages"><i class="icon-pie-chart"></i> Pelaksanaan Pemenuhan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#messages3" role="tab" aria-controls="messages"><i class="icon-pie-chart"></i> Monitoring dan Evaluasi</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#messages3" role="tab" aria-controls="messages"><i class="icon-pie-chart"></i> Penyusunan Strategi Peningkatan</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="home3" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Date registered</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vishnu Serghei</td>
+                    <td>2012/01/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zbyněk Phoibos</td>
+                    <td>2012/02/01</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-danger">Banned</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Einar Randall</td>
+                    <td>2012/02/01</td>
+                    <td>Admin</td>
+                    <td>
+                      <span class="badge badge-secondary">Inactive</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Félix Troels</td>
+                    <td>2012/03/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-warning">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Aulus Agmundr</td>
+                    <td>2012/01/21</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="profile3" role="tabpanel">
+      2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="tab-pane" id="messages3" role="tabpanel">
+      3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</div>
+<!--/.col-->
+<?php
+}
+}
+/* {/block 'bodycontent'} */
+}

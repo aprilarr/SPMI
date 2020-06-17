@@ -1,0 +1,50 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Master Mata Pelajaran
+      {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+      <span class="pull-right"><a class="btn btn-primary btn-xs" href="{$baseUrl}/mastermatpel/form_matpel">New Mata Pelajaran</a></span>
+      {/if}
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm" id="table-user">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Kode Mata Pelajaran</th>
+            <th>Nama Mata Pelajaran</th>
+            {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+            <th>Edit/Delete</th>
+            {/if}
+          </tr>
+        </thead>
+        <tbody>
+        {foreach from=$listdata item=itemdata}	
+          <tr>
+            <td>{$itemdata.id}</a></td>
+            <td>{$itemdata.kode_matpel}</td>
+            <td>{$itemdata.nama_matpel}</td>
+            {if (isset($currentuser->page_role) && $currentuser->page_role == "admin")}
+            <td>
+                <a href="{$baseUrl}/mastermatpel/form_matpel/{$itemdata.id}" class="fa fa-pencil"></a>
+                <a href="{$baseUrl}/mastermatpel/delete/{$itemdata.id}" class="fa fa-times" onclick="return confirm('Are you sure you want to delete this data?')"></a>
+            </td>
+            {/if}
+          </tr>
+        {/foreach}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{/block}
+{block name=scriptcontent}
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<script src="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript">	
+$(document).ready(function()
+{         	
+    var table = $('#table-user').DataTable();
+});
+</script>
+{/block}

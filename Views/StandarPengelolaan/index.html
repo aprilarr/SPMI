@@ -1,0 +1,418 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}  
+<!--/.col-->
+<div class="mb-4">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#pemetaan" role="tab" aria-controls="pemetaan"><i class="icon-calculator"></i> Pemetaan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#rencanaPemenuhan" role="tab" aria-controls="rencanaPemenuhan"><i class="icon-basket-loaded"></i> Rencana Pemenuhan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#pelaksanaan" role="tab" aria-controls="pelaksanaan"><i class="icon-pie-chart"></i> Pelaksanaan Pemenuhan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#monev" role="tab" aria-controls="monev"><i class="icon-pie-chart"></i> Monitoring dan Evaluasi</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#penyusunan" role="tab" aria-controls="penyusunan"><i class="icon-pie-chart"></i> Penyusunan Strategi Peningkatan</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="pemetaan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="card">
+                <div class="card-header">
+                  <select class="js-example-basic-single" name="id_indikator" id="idIndikator">
+                  </select>
+                  <button type="submit" class="btn btn-sm btn-primary" id="btnAdd"><i class="fa fa-dot-circle-o"></i> Add Indikator</button>
+                </div>
+                <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>Standar Indikator</th>
+                      <th>Kondisi Saat Ini</th>
+                      <th>Kelemahan</th>
+                      <th>Kekuatan</th>
+                      <th>Masalah</th>
+                      <th>Akar Masalah</th>
+                      <th>Rekomendasi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tbody>
+                      {foreach from=$listdatapemetaan item=itemdatapemetaan}	
+                        <tr>
+                          <td>{$itemdatapemetaan.no_indikator}</td>
+                          <td>
+                            {if $itemdatapemetaan.flag=="C"}
+                              <a href='{$baseUrl}/standarpengelolaan/form_pemetaan/{$itemdatapemetaan.id}'>{$itemdatapemetaan.nama_indikator}</a>
+                            {else}
+                              {$itemdatapemetaan.nama_indikator}
+                            {/if}
+                          </td>
+                          <td>{$itemdatapemetaan.kondisi_saat_ini}</td>
+                          <td>{$itemdatapemetaan.kelemahan}</td>
+                          <td>{$itemdatapemetaan.kekuatan}</td>
+                          <td>{$itemdatapemetaan.masalah}</td>
+                          <td>{$itemdatapemetaan.akar_masalah}</td>
+                          <td>{$itemdatapemetaan.rekomendasi}</td>
+                        </tr>
+                      {/foreach}
+                    </tbody>
+                </table>
+              </div>  
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="rencanaPemenuhan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Standar Indikator</th>
+                    <th>Rekomendasi</th>
+                    <th>Program</th>
+                    <th>Kegiatan</th>
+                    <th>Volume</th>
+                    <th>Kebutuhan Biaya</th>
+                    <th>Sumber Daya</th>
+                    <th>Skala Prioritas T1</th>
+                    <th>Skala Prioritas T2</th>
+                    <th>Skala Prioritas T3</th>
+                    <th>Skala Prioritas T4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach from=$listdatarencanapemenuhan item=itemdatarencanapemenuhan}	
+                    <tr>
+                      <td>{$itemdatarencanapemenuhan.no_indikator}</td>
+                      <td>
+                        {if $itemdatarencanapemenuhan.flag=="C" && isset($itemdatarencanapemenuhan.rekomendasi)}
+                          <a href='{$baseUrl}/standarpengelolaan/form_rencana_pemenuhan/{$itemdatarencanapemenuhan.id}'>{$itemdatarencanapemenuhan.nama_indikator}</a>
+                        {else}
+                          {$itemdatarencanapemenuhan.nama_indikator}
+                        {/if}
+                      </td>
+                      <td>{$itemdatarencanapemenuhan.rekomendasi}</td>
+                      <td>{$itemdatarencanapemenuhan.program}</td>
+                      <td>{$itemdatarencanapemenuhan.kegiatan}</td>
+                      <td>{$itemdatarencanapemenuhan.volume}</td>
+                      <td>
+                        {if $itemdatarencanapemenuhan.flag=="C"}
+                          {$itemdatarencanapemenuhan.kebutuhan_biaya}
+                        {/if}
+                      </td>
+                      <td>{$itemdatarencanapemenuhan.sumber_daya}</td>
+                      <td>
+                        {if $itemdatarencanapemenuhan.flag=="C"}
+                          {if $itemdatarencanapemenuhan.sk_1=="1"}
+                            V
+                          {/if}
+                        {/if}
+                      </td>
+                      <td>
+                        {if $itemdatarencanapemenuhan.flag=="C"}
+                            {if $itemdatarencanapemenuhan.sk_2=="1"}
+                              V
+                            {/if}
+                        {/if}
+                      </td>
+                      <td>
+                        {if $itemdatarencanapemenuhan.flag=="C"}
+                          {if $itemdatarencanapemenuhan.sk_3=="1"}
+                            V
+                          {/if}
+                        {/if}
+                      </td>
+                      <td>
+                        {if $itemdatarencanapemenuhan.flag=="C"}
+                          {if $itemdatarencanapemenuhan.sk_4=="1"}
+                            V
+                          {/if}
+                        {/if}
+                      </td>
+                    </tr>
+                  {/foreach}
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="pelaksanaan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+              <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Standar Indikator</th>
+                    <th>Program</th>
+                    <th>Kegiatan</th>
+                    <th>Input</th>
+                    <th>Proses</th>
+                    <th>Output</th>
+                    <th>Outcome</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach from=$listdatapelaksanaanpemenuhan item=itemdatapelaksanaanpemenuhan}	
+                    <tr>
+                      <td>{$itemdatapelaksanaanpemenuhan.no_indikator}</td>
+                      <td>
+                        {if $itemdatapelaksanaanpemenuhan.flag=="C" && isset($itemdatapelaksanaanpemenuhan.program) && isset($itemdatapelaksanaanpemenuhan.kegiatan)}
+                          <a href='{$baseUrl}/standarpengelolaan/form_pelaksanaan_pemenuhan/{$itemdatapelaksanaanpemenuhan.id}'>{$itemdatapelaksanaanpemenuhan.nama_indikator}</a>
+                        {else}
+                          {$itemdatapelaksanaanpemenuhan.nama_indikator}
+                        {/if}
+                      </td>
+                      <td>{$itemdatapelaksanaanpemenuhan.program}</td>
+                      <td>{$itemdatapelaksanaanpemenuhan.kegiatan}</td>
+                      <td>{$itemdatapelaksanaanpemenuhan.input}</td>
+                      <td>{$itemdatapelaksanaanpemenuhan.proses}</td>
+                      <td>{$itemdatapelaksanaanpemenuhan.output}</td>
+                      <td>{$itemdatapelaksanaanpemenuhan.outcome}</td>
+                    </tr>
+                  {/foreach}
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="monev" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Standar Indikator</th>
+                    <th>Program</th>
+                    <th>Kegiatan</th>
+                    <th>Koordinator</th>
+                    <th>Waktu Pelaksaan</th>
+                    <th>Input</th>
+                    <th>Proses</th>
+                    <th>Output</th>
+                    <th>Outcome</th>
+                    <th>Petugas Monev</th>
+                    <th>Waktu Monev</th>
+                    <th>Kesimpulan dan Rekomendasi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach from=$listdatamonev item=itemdatamonev}	
+                    <tr>
+                      <td>{$itemdatamonev.no_indikator}</td>
+                      <td>
+                          {if $itemdatamonev.flag=="C" && isset($itemdatamonev.input) && isset($itemdatamonev.proses) && isset($itemdatamonev.output) && isset($itemdatamonev.outcome)}
+                          <a href='{$baseUrl}/standarpengelolaan/form_monev/{$itemdatamonev.id}'>{$itemdatamonev.nama_indikator}</a>
+                        {else}
+                          {$itemdatamonev.nama_indikator}
+                        {/if}
+                      </td>
+                      <td>{$itemdatamonev.program}</td>
+                      <td>{$itemdatamonev.kegiatan}</td>
+                      <td>{$itemdatamonev.koordinator}</td>
+                      <td>
+                        {if $itemdatamonev.flag=="C"}
+                          {$itemdatamonev.waktu_pelaksanaan}
+                        {/if}
+                      </td>
+                      <td>{$itemdatamonev.input}</td>
+                      <td>{$itemdatamonev.proses}</td>
+                      <td>{$itemdatamonev.output}</td>
+                      <td>{$itemdatamonev.outcome}</td>
+                      <td>{$itemdatamonev.petugas_monev}</td>
+                      <td>
+                        {if $itemdatamonev.flag=="C"}
+                          {$itemdatamonev.waktu_monev}
+                        {/if}
+                      </td>
+                      <td>{$itemdatamonev.kesimpulan}</td>
+                    </tr>
+                  {/foreach}
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="penyusunan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Standar Indikator</th>
+                    <th>Program</th>
+                    <th>Kegiatan</th>
+                    <th>Input</th>
+                    <th>Proses</th>
+                    <th>Output</th>
+                    <th>Outcome</th>
+                    <th>Kesimpulan dan Hasil Monev</th>
+                    <th>Penyusunan Strategi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach from=$listdatastrategi item=itemdatastrategi}	
+                    <tr>
+                      <td>{$itemdatastrategi.no_indikator}</td>
+                      <td>
+                        {if $itemdatastrategi.flag=="C" && isset($itemdatastrategi.kesimpulan)}
+                          <a href='{$baseUrl}/standarpengelolaan/form_strategi/{$itemdatastrategi.id}'>{$itemdatastrategi.nama_indikator}</a>
+                        {else}
+                          {$itemdatastrategi.nama_indikator}
+                        {/if}
+                      </td>
+                      <td>{$itemdatastrategi.program}</td>
+                      <td>{$itemdatastrategi.kegiatan}</td>
+                      <td>{$itemdatastrategi.input}</td>
+                      <td>{$itemdatastrategi.proses}</td>
+                      <td>{$itemdatastrategi.output}</td>
+                      <td>{$itemdatastrategi.outcome}</td>
+                      <td>{$itemdatastrategi.kesimpulan}</td>
+                      <td>{$itemdatastrategi.strategi_peningkatan}</td>
+                    </tr>
+                  {/foreach}
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.col-->
+{/block}
+{block name=scriptcontent}
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<script src="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/select2/select2.min.css"/>
+<script src="{$baseUrl}/assets/vendor/select2/select2.min.js"></script>
+
+<script type="text/javascript">	
+$(document).ready(function()
+{ 
+  $("#btnAdd").click(function() {
+    var idIndikator = $("#idIndikator").val();
+
+    var formData = {
+      id_indikator: idIndikator
+    }
+    
+    $.ajax({ 
+      url: baseUrl + '/standarpengelolaan/addIndikator',
+      data: formData,
+      type: 'POST',
+      success: function(result)
+      {
+        //table.ajax.reload();
+        alert("Data indikator berhasil ditambahkan!");
+
+        location.reload();
+
+        $('.js-example-basic-single').empty();
+        $('.js-example-basic-single').select2({
+          width: '85%',
+          ajax: {
+            url: baseUrl + '/standarpengelolaan/getIndikator',
+            dataType: 'json'
+            // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+          }
+        });
+      }
+    });
+  });
+
+  $('.js-example-basic-single').select2({
+    width: '85%',
+    ajax: {
+      url: baseUrl + '/standarpengelolaan/getIndikator',
+      dataType: 'json'
+      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+    }
+  });
+
+});
+</script>
+{/block}

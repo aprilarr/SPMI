@@ -1,0 +1,34 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Mata Pelajaran</strong>
+  </div>
+  <div class="card-body">
+    <form action="{$baseUrl}/mastermatpel/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Mata Pelajaran</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Mata " value="{$datanya.id}" readonly required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Kode Mata Pelajaran</label>
+        <div class="col-md-9">
+          <input type="text" id="kode_matpel" name="kode_matpel" class="form-control" placeholder="Kode Pelajaran" value="{$datanya.kode_matpel}" required maxlength="3">
+        </div>
+      </div> 
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Nama Mata Pelajaran</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_matpel" name="nama_matpel" class="form-control" placeholder="Nama Pelajaran" value="{$datanya.nama_matpel}" required>
+        </div>
+      </div>              
+      <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+{/block}              

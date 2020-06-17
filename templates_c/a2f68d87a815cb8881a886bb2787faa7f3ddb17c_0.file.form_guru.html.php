@@ -1,0 +1,240 @@
+<?php
+/* Smarty version 3.1.32, created on 2019-12-15 16:20:15
+  from 'E:\Yoyoy\bantingan\bantingan\Views\Masterguru\form_guru.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5df5facf63a704_99019092',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a2f68d87a815cb8881a886bb2787faa7f3ddb17c' => 
+    array (
+      0 => 'E:\\Yoyoy\\bantingan\\bantingan\\Views\\Masterguru\\form_guru.html',
+      1 => 1576401607,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5df5facf63a704_99019092 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_103105df5facf5dca22_26628390', 'bodycontent');
+?>
+          
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_107595df5facf6319b3_42962925', 'scriptcontent');
+?>
+    <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../Shared/core2.master.html");
+}
+/* {block 'bodycontent'} */
+class Block_103105df5facf5dca22_26628390 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'bodycontent' => 
+  array (
+    0 => 'Block_103105df5facf5dca22_26628390',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Guru</strong>
+  </div>
+  <div class="card-body">
+    <form action="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterguru/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Guru</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Guru" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['id'];?>
+" readonly> 
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">NIP</label>
+        <div class="col-md-9">
+          <input type="text" id="nip" name="nip" class="form-control" placeholder="NIP" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['nip'];?>
+">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Nama Guru</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_guru" name="nama_guru" class="form-control" placeholder="Nama Guru" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['nama_guru'];?>
+">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Jabatan</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_jabatan" id="id_jabatan">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdatajabatan']->value, 'itemdatajabatan');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdatajabatan']->value) {
+?>	
+              <option value=<?php echo $_smarty_tpl->tpl_vars['itemdatajabatan']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['itemdatajabatan']->value['nama_jabatan'];?>
+</option>
+              <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Jurusan</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_jurusan" id="id_jurusan">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdatajurusan']->value, 'itemdatajurusan');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdatajurusan']->value) {
+?>	
+              <option value=<?php echo $_smarty_tpl->tpl_vars['itemdatajurusan']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['itemdatajurusan']->value['nama_jurusan'];?>
+</option>
+              <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
+        </div>
+      </div> 
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mengajar</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_matpel" id="id_matpel">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdatamatpel']->value, 'itemdatamatpel');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdatamatpel']->value) {
+?>	
+              <option value=<?php echo $_smarty_tpl->tpl_vars['itemdatamatpel']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['itemdatamatpel']->value['nama_matpel'];?>
+</option>
+              <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
+        </div>
+      </div>   
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Pendidikan Terakhir</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_pendidikan" id="id_pendidikan">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdatapend']->value, 'itemdatapendidikan');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdatapendidikan']->value) {
+?>	
+              <option value=<?php echo $_smarty_tpl->tpl_vars['itemdatapendidikan']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['itemdatapendidikan']->value['deskripsi'];?>
+</option>
+              <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
+        </div>
+      </div>   
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Sertifikasi</label>
+        <div class="col-md-9">
+          <div class="checkbox">
+            <label for="sertified">
+              <input type="checkbox" id="sertified" name="sertified" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['sertified'];?>
+" onchange="setCBSertified()">
+            </label>
+          </div>
+        </div>
+      </div>      
+      <div class="card-footer">
+          <input type="hidden" id="id_jabatan_update" name="id_jabatan_update" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['id_jabatan'];?>
+">
+          <input type="hidden" id="id_jurusan_update" name="id_jurusan_update" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['id_jurusan'];?>
+">
+          <input type="hidden" id="id_matpel_update" name="id_matpel_update" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['id_matpel'];?>
+">
+          <input type="hidden" id="id_pendidikan_update" name="id_pendidikan_update" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['id_pendidikan'];?>
+">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+<?php
+}
+}
+/* {/block 'bodycontent'} */
+/* {block 'scriptcontent'} */
+class Block_107595df5facf6319b3_42962925 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'scriptcontent' => 
+  array (
+    0 => 'Block_107595df5facf6319b3_42962925',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/assets/vendor/datatables/jquery.dataTables.min.js"><?php echo '</script'; ?>
+>
+<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/assets/vendor/select2/select2.min.css"/>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/assets/vendor/select2/select2.min.js"><?php echo '</script'; ?>
+>
+
+<?php echo '<script'; ?>
+ type="text/javascript">	
+document.getElementById("id_jabatan").value = document.getElementById("id_jabatan_update").value;
+document.getElementById("id_pendidikan").value = document.getElementById("id_pendidikan_update").value;
+document.getElementById("id_matpel").value = document.getElementById("id_matpel_update").value;
+document.getElementById("id_jurusan").value = document.getElementById("id_jurusan_update").value;
+ 
+$(document).ready(function()
+{         	
+    $('#id_jabatan').select2();
+    $('#id_jurusan').select2();
+    $('#id_matpel').select2();
+    $('#id_pendidikan').select2();
+});
+
+if(document.getElementById("sertified").value == 1) {
+  document.getElementById("sertified").checked = true;
+} 
+
+function setCBSertified() {
+  if (document.getElementById("sertified").checked) {
+    document.getElementById("sertified").value = 1;
+  } else {
+    document.getElementById("sertified").value = 0;
+  }
+}
+<?php echo '</script'; ?>
+>
+<?php
+}
+}
+/* {/block 'scriptcontent'} */
+}

@@ -1,0 +1,457 @@
+<?php
+/* Smarty version 3.1.32, created on 2019-12-02 23:07:34
+  from 'E:\Yoyoy\bantingan\bantingan\Views\Standartendik\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5de536c655c546_81008608',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '76f02717490bf918030f9d2639f391a2adf910d7' => 
+    array (
+      0 => 'E:\\Yoyoy\\bantingan\\bantingan\\Views\\Standartendik\\index.html',
+      1 => 1575302385,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5de536c655c546_81008608 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_167545de536c65323b8_12795677', 'bodycontent');
+?>
+
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../Shared/core2.master.html");
+}
+/* {block 'bodycontent'} */
+class Block_167545de536c65323b8_12795677 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'bodycontent' => 
+  array (
+    0 => 'Block_167545de536c65323b8_12795677',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+  
+<!--/.col-->
+<div class="mb-4">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#pemetaan" role="tab" aria-controls="pemetaan"><i class="icon-calculator"></i> Pemetaan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#rencanaPemenuhan" role="tab" aria-controls="rencanaPemenuhan"><i class="icon-basket-loaded"></i> Rencana Pemenuhan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#pelaksanaan" role="tab" aria-controls="pelaksanaan"><i class="icon-pie-chart"></i> Pelaksanaan Pemenuhan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#monev" role="tab" aria-controls="monev"><i class="icon-pie-chart"></i> Monitoring dan Evaluasi</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#penyusunan" role="tab" aria-controls="penyusunan"><i class="icon-pie-chart"></i> Penyusunan Strategi Peningkatan</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="pemetaan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Standar Indikator</th>
+                    <th>Kondisi Saat Ini</th>
+                    <th>Kelemahan</th>
+                    <th>Kekuatan</th>
+                    <th>Masalah</th>
+                    <th>Akar Masalah</th>
+                    <th>Rekomendasi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tbody>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['listdata']->value, 'itemdata');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['itemdata']->value) {
+?>	
+                      <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['no_indikator'];?>
+</td>
+                        <td><a href='<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/standartendik/form_pemetaan/<?php echo $_smarty_tpl->tpl_vars['itemdata']->value['id'];?>
+'><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['nama_indikator'];?>
+</a></td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['kondisi_saat_ini'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['kelemahan'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['kekuatan'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['masalah'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['akar_masalah'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['itemdata']->value['rekomendasi'];?>
+</td>
+                      </tr>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="rencanaPemenuhan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Standar Indikator</th>
+                    <th>Rekomendasi</th>
+                    <th>Program</th>
+                    <th>Kegiatan</th>
+                    <th>Volume</th>
+                    <th>Kebutuhan Biaya</th>
+                    <th>Sumber Daya</th>
+                    <th>Skala Prioritas T1</th>
+                    <th>Skala Prioritas T2</th>
+                    <th>Skala Prioritas T3</th>
+                    <th>Skala Prioritas T4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>Vishnu Serghei</td>
+                    <td>2012/01/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zbyněk Phoibos</td>
+                    <td>2012/02/01</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-danger">Banned</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Einar Randall</td>
+                    <td>2012/02/01</td>
+                    <td>Admin</td>
+                    <td>
+                      <span class="badge badge-secondary">Inactive</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Félix Troels</td>
+                    <td>2012/03/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-warning">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Aulus Agmundr</td>
+                    <td>2012/01/21</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="pelaksanaan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Date registered</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vishnu Serghei</td>
+                    <td>2012/01/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zbyněk Phoibos</td>
+                    <td>2012/02/01</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-danger">Banned</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Einar Randall</td>
+                    <td>2012/02/01</td>
+                    <td>Admin</td>
+                    <td>
+                      <span class="badge badge-secondary">Inactive</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Félix Troels</td>
+                    <td>2012/03/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-warning">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Aulus Agmundr</td>
+                    <td>2012/01/21</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="monev" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Date registered</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vishnu Serghei</td>
+                    <td>2012/01/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zbyněk Phoibos</td>
+                    <td>2012/02/01</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-danger">Banned</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Einar Randall</td>
+                    <td>2012/02/01</td>
+                    <td>Admin</td>
+                    <td>
+                      <span class="badge badge-secondary">Inactive</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Félix Troels</td>
+                    <td>2012/03/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-warning">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Aulus Agmundr</td>
+                    <td>2012/01/21</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+    <div class="tab-pane" id="penyusunan" role="tabpanel">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Date registered</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vishnu Serghei</td>
+                    <td>2012/01/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zbyněk Phoibos</td>
+                    <td>2012/02/01</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-danger">Banned</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Einar Randall</td>
+                    <td>2012/02/01</td>
+                    <td>Admin</td>
+                    <td>
+                      <span class="badge badge-secondary">Inactive</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Félix Troels</td>
+                    <td>2012/03/01</td>
+                    <td>Member</td>
+                    <td>
+                      <span class="badge badge-warning">Pending</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Aulus Agmundr</td>
+                    <td>2012/01/21</td>
+                    <td>Staff</td>
+                    <td>
+                      <span class="badge badge-success">Active</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.col-->
+<?php
+}
+}
+/* {/block 'bodycontent'} */
+}

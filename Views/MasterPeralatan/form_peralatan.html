@@ -1,0 +1,62 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+<div class="card">
+  <div class="card-header">
+    <strong>Form Master Peralatan</strong>
+  </div>
+  <div class="card-body">
+    <form action="{$baseUrl}/masterperalatan/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Ruangan</label>
+        <div class="col-md-9">
+            <select class="js-example-basic-single" name="id_ruangan" id="id_ruangan" required>
+              {foreach from=$listdatastandar item=itemdataindstandar}	
+              <option value={$itemdataindstandar.id}>{$itemdataindstandar.nama_ruangan}</option>
+              {/foreach}
+            </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">ID Peralatan</label>
+        <div class="col-md-9">
+          <input type="text" id="id" name="id" class="form-control" placeholder="ID Peralatan" value="{$datanya.id}" readonly required> 
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Nama Peralatan</label>
+        <div class="col-md-9">
+          <input type="text" id="nama_alat" name="nama_alat" class="form-control" placeholder="Nama Peralatan" value="{$datanya.nama_alat}" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Jumlah</label>
+        <div class="col-md-9">
+          <input type="number" id="jumlah" name="jumlah" class="form-control" placeholder="Jumlah" value="{$datanya.jumlah}" required>
+        </div>
+      </div>      
+      <div class="card-footer">
+          <input type="hidden" id="id_ruangan_update" name="id_ruangan_update" value="{$datanya.id_ruangan}">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+    </form>
+  </div>      
+</div>
+{/block}          
+{block name=scriptcontent}
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.css"/>
+<script src="{$baseUrl}/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{$baseUrl}/assets/vendor/select2/select2.min.css"/>
+<script src="{$baseUrl}/assets/vendor/select2/select2.min.js"></script>
+
+<script type="text/javascript">	
+document.getElementById("id_ruangan").value = document.getElementById("id_ruangan_update").value;
+ 
+$(document).ready(function()
+{         	
+    $(".js-example-basic-single").select2({
+      width: '50%' // need to override the changed default
+    });
+});
+</script>
+{/block}    

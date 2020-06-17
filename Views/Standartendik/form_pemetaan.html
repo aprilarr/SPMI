@@ -1,0 +1,97 @@
+{extends file="../Shared/core2.master.html"}
+{block name=bodycontent}
+  <div class="card">
+    <div class="card-header">
+      <strong>Standar Pendidik dan Tenaga Kependidikan - Pemetaan Form</strong>
+    </div>
+    <div class="card-body">
+      <form action="{$baseUrl}/Standartendik/savePemetaan" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">No. Indikator</label>
+          <div class="col-md-9">
+            <input type="text" id="no_indikator" name="no_indikator" class="form-control" placeholder="No. Indikator" value="{$datanya.no_indikator}" readonly>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label" for="text-input">Indikator</label>
+          <div class="col-md-9">
+            <input type="text" id="nama_indikator" name="nama_indikator" class="form-control" placeholder="Nama Indikator" value="{$datanya.nama_indikator}" readonly>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label" for="text-input">Kondisi Saat Ini</label>
+          <div class="col-md-9">
+            <input type="text" id="kondisi_saat_ini" name="kondisi_saat_ini" class="form-control" placeholder="Kondisi Saat Ini" value="{$datanya.kondisi_saat_ini}">
+            {if {$datanya.generate}==1}
+            <button type="button" class="btn btn-sm btn-primary" id="btnGenerate"><i class="fa fa-dot-circle-o"></i> Generate</button>
+            {/if}
+          </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Kelemahan</label>
+            <div class="col-md-9">
+              <input type="text" id="kelemahan" name="kelemahan" class="form-control" placeholder="Kelemahan" value="{$datanya.kelemahan}">
+            </div>
+        </div>   
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Kekuatan</label>
+            <div class="col-md-9">
+              <input type="text" id="kekuatan" name="kekuatan" class="form-control" placeholder="Kekuatan" value="{$datanya.kekuatan}">
+            </div>
+        </div>     
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Masalah</label>
+            <div class="col-md-9">
+              <input type="text" id="masalah" name="masalah" class="form-control" placeholder="Masalah" value="{$datanya.masalah}">
+            </div>
+        </div> 
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Akar Masalah</label>
+            <div class="col-md-9">
+              <input type="text" id="akar_masalah" name="akar_masalah" class="form-control" placeholder="Akar Masalah" value="{$datanya.akar_masalah}">
+            </div>
+        </div> 
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Rekomendasi</label>
+            <div class="col-md-9">
+              <input type="text" id="rekomendasi" name="rekomendasi" class="form-control" placeholder="Rekomendasi" value="{$datanya.rekomendasi}">
+            </div>
+        </div>        
+        <div class="card-footer">
+            <input type="hidden" name="id" value="{$datanya.id}">
+            <input type="hidden" name="id_indikator" value="{$datanya.id_indikator}">
+            <input type="hidden" name="rumus" id="rumus" value="{$datanya.rumus}">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+          </div>
+      </form>
+    </div>
+                
+  </div>
+{/block}      
+{block name=scriptcontent}
+<script type="text/javascript">	
+$(document).ready(function()
+{ 
+  $("#btnGenerate").click(function() {
+    var rumus = $("#rumus").val();
+
+    var formData = {
+      rumus: rumus
+    }
+
+    $.ajax({ 
+      url: baseUrl + '/Standartendik/generateKondisiSaatIni',
+      data: formData,
+      type: 'POST',
+      success: function(result)
+      {
+        alert(result);
+        $("#kondisi_saat_ini").val(result);
+      }
+    });
+  });
+
+});
+</script>
+{/block}        

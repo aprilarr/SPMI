@@ -1,0 +1,81 @@
+<?php
+/* Smarty version 3.1.32, created on 2019-12-02 10:11:42
+  from 'E:\Yoyoy\bantingan\bantingan\Views\Masterjabatan\form_jabatan.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5de480ee041577_24357061',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '81dbdcf61a834549ed2df40ee14e0003e096a4d4' => 
+    array (
+      0 => 'E:\\Yoyoy\\bantingan\\bantingan\\Views\\Masterjabatan\\form_jabatan.html',
+      1 => 1575255925,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5de480ee041577_24357061 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_188775de480ee0330a2_77375388', 'bodycontent');
+?>
+              <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../Shared/core2.master.html");
+}
+/* {block 'bodycontent'} */
+class Block_188775de480ee0330a2_77375388 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'bodycontent' => 
+  array (
+    0 => 'Block_188775de480ee0330a2_77375388',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<div class="card">
+                <div class="card-header">
+                  <strong>Basic Form</strong>
+                  Elements
+                </div>
+                <div class="card-body">
+                  <form action="<?php echo $_smarty_tpl->tpl_vars['baseUrl']->value;?>
+/masterjabatan/save" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label">Nama</label>
+                      <div class="col-md-9">
+                        <input type="text" id="id" name="id" class="form-control" placeholder="ID Jabatan" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['id'];?>
+" disabled>
+                        <span class="help-block">This is a help text</span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="text-input">Nama Jabatan</label>
+                      <div class="col-md-9">
+                        <input type="text" id="nama_jabatan" name="nama_jabatan" class="form-control" placeholder="Nama Jabatan" value="<?php echo $_smarty_tpl->tpl_vars['datanya']->value['nama_jabatan'];?>
+">
+                        <span class="help-block">This is a help text</span>
+                      </div>
+                    </div>              
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                      </div>
+                  </form>
+                </div>
+                
+              </div>
+<?php
+}
+}
+/* {/block 'bodycontent'} */
+}
